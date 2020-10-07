@@ -11,6 +11,8 @@
     <Summary>It's wrapper for JSON serializing, but it uses the word cereal. That's it.</Summary>
     <Title>Cerealizer</Title>
     <Description>It's wrapper for JSON serializing, but it uses the word cereal. That's it.</Description>
+    <RepositoryUrl>https://github.com/IanKnighton/Cerealizer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
