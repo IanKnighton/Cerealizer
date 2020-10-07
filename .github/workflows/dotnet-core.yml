@@ -23,11 +23,26 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: Set API Key
-      run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
-    - name: Setup GitHub Packages
-      run: dotnet nuget add source https://nuget.pkg.github.com/IanKnighton/index.json -n github -u IanKnighton -p GH_TOKEN --store-password-in-clear-text
-    - name: Pack
-      run: dotnet pack --configuration Release --no-restore
-    - name: Push
-      run: dotnet nuget push "bin/Release/Cerealizer.*.nupkg" --source "github"
+    - name: Push Nupkg to GitHub Packages
+      # You may pin to the exact commit or the version.
+      # uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@462b6006e5c90f732d030b0ace2c3e7ee9d550bc
+      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      with:
+        # Path of NuPkg
+        nupkg-path: bin/Release/Cerealizer.*.nupkg
+        # package repository owner
+        repo-owner: IanKnighton
+        # user account
+        gh-user: IanKnighton
+        # access token
+        token: ${{ secrets.GITHUB_TOKEN }}
+        # skip publishing duplicated package(s)
+        skip-duplicate: true
+#     - name: Set API Key
+#       run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+#     - name: Setup GitHub Packages
+#       run: dotnet nuget add source https://nuget.pkg.github.com/IanKnighton/index.json -n github -u IanKnighton -p GH_TOKEN --store-password-in-clear-text
+#     - name: Pack
+#       run: dotnet pack --configuration Release --no-restore
+#     - name: Push
+#       run: dotnet nuget push "bin/Release/Cerealizer.*.nupkg" --source "github"
