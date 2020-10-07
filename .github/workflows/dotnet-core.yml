@@ -23,6 +23,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Pack
+      run: dotnet pack --configuration Release --no-restore
     - name: Push Nupkg to GitHub Packages
       # You may pin to the exact commit or the version.
       # uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@462b6006e5c90f732d030b0ace2c3e7ee9d550bc
