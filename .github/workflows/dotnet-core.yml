@@ -23,10 +23,10 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Set API Key
+      run: export GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
     - name: Setup GitHub Packages
       run: dotnet nuget add source https://nuget.pkg.github.com/IanKnighton/index.json -n github -u IanKnighton -p GH_TOKEN --store-password-in-clear-text
-    - name: Set API Key
-      run: dotnet nuget setapikey = ${{ secrets.GITHUB_TOKEN }} --source "github"
     - name: Pack
       run: dotnet pack --configuration Release --no-restore
     - name: Push
