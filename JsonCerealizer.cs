@@ -6,6 +6,7 @@ namespace Cerealizer
     public static class JsonCerealizer
     {
         #region Cerealize
+        
         /// <summary>
         /// Serializes the specified object to a JSON string.
         /// </summary>

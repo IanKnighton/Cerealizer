@@ -19,7 +19,9 @@ dotnet add PROJECT package Cerealizer
 Once you have it referenced, it's pretty straight forwared. You can pass or retrieve objects just like you would use Newtonsoft. 
 
 ```csharp
-string serializedObject = JsonCerealizer.CerealizeObject(YourObject)
+string serializedObject = JsonCerealizer.CerealizeObject(YourObject);
+
+YourObject test = JsonCerealizer.Decerealize<YourObject>("serializedObject");
 ```
 
 That's pretty much all there is to it. 
