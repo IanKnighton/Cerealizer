@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>Ian Knighton</Authors>
+    <Copyright>2020</Copyright>
+    <Owners>Ian Knighton</Owners>
+    <PackageProjectUrl>https://github.com/IanKnighton/Cerealizer</PackageProjectUrl>
+    <Summary>It's wrapper for JSON serializing, but it uses the word cereal. That's it.</Summary>
+    <Title>Cerealizer</Title>
+    <Description>It's wrapper for JSON serializing, but it uses the word cereal. That's it.</Description>
   </PropertyGroup>
 
   <ItemGroup>
