@@ -1,2 +1,7 @@
 # Cerealizer
-It's wrapper for JSON serializing, but it uses the word cereal. That's it. 
+
+I was sitting in a meeting one day with a person named "Jason" and someone made a comment about whether or not they were `serialized`, which then turned into a joke about cereal.
+
+So in the course of a meeting I put together a wrapper on top of the Newtonsoft.Json `JsonConvert` class that keeps all of the same functionality, but changes the word to `Cereal` instead of `Serial`.
+
+It really provides no value other than that. 
